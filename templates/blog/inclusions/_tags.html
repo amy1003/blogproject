@@ -1,0 +1,12 @@
+
+<div class="sidebar__block">
+    <h3 class="block__title">文章标签</h3>
+    <ul class="block-list tag-list clearfix">
+        {% for tag in tag_list %}
+            <li class="tag-item"><a class="tag-link" href="{% url 'blog:tag' tag.pk %}">{{ tag.name }}({{ tag.num_posts }})</a></li>
+        {% empty %}
+            暂无标签！
+        {% endfor %}
+
+    </ul>
+</div>
